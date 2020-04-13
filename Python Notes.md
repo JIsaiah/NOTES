@@ -105,3 +105,73 @@ string_1 = "Camelot"
 string_2 = "place"
 
 print "Let's not go to %s. 'Tis a silly %s." % (string_1, string_2)
+
+**ARRAYS:**
+Inclusive:Exclusive
+Arrays start from 0
+
+_Get range from array:_
+e.g. a = [0, 1, 2, 3, 4]
+
+a[0:3] = [0, 1, 2]
+a[:5] = [0, 1, 2, 3, 4]
+a[::-1] = [4, 3, 2, 1, 0]
+
+_Check amount in array:_
+e.g. a = [0, 1, 2, 3, 4]
+
+len(a) = 5
+
+_Adding to an array:_
+e.g. a = [0, 1, 2, 3, 4]
+
+a.append(5) = [0, 1, 2, 3, 4, 5]
+
+_Joining string:_
+a = ['dog', 'cat', 'fish']
+
+','.join(a) = 'dog,cat,fish'
+'+'.join(a[0]) = 'd+o+g'
+
+_Splitting string:_
+a = 'Array Content 1'
+b = 'Hello, this is my array'
+
+a.split() = ['Array', 'Content', '1']
+b.split(',') = ['Hello', 'this is my array']
+
+**DICTIONARIES**
+
+a = {'cat': 'kucing', 'dog': 'anjing', 'fish': 'ikan'}
+
+_Accessing a value:_
+a['cat'] = 'kucing'
+-Cat is the key, kucing is the value. You can only access the value using the key-
+
+_Add new entry:_
+a['pig'] = 'babi' = {'cat': 'kucing', 'dog': 'anjing', 'fish': 'ikan', 'pig': 'babi'}
+
+_Look up all keys:_
+a.keys()
+
+dict_keys(['cat', 'dog', 'fish'])
+
+_Look up all values:_
+a.values()
+
+dict_values(['kucing', 'anjing', 'ikan'])
+
+_Update a value:_
+a['cat'] = 'tikus'
+
+a = {'cat': 'tikus', 'dog': 'anjing', 'fish': 'ikan'}
+
+_Remove a value:_
+a.pop('cat')
+
+a = {'dog': 'anjing', 'fish': 'ikan'}
+
+_Replace multiple values at once:_
+a.update(dict.fromkeys(['dog', 'fish'], 'kucing'))
+
+a = {'dog': 'kucing', 'fish': 'kucing'}
