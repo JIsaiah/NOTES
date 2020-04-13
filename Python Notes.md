@@ -11,10 +11,14 @@ When the result of a division is a decimal, it will be rounded to a whole number
 When a multi-line string is not assigned to a variable, it becomes a multi-line comment.
 
 **DEFINITIONS:**
+-_Environment:_ A housing which contains different tools and packages for each project. Imagine this as a house with furniture. Environments can be made and deleted freely.
 -_Editor:_ The area where we write our code.
 -_Integer:_ Whole number with no decimal point
 -_Float:_ Number with a decimal point ('e' can be used for scientific notation. float = 1.5e2)
 -_Dot Notation:_ (lion.upper()) Only works with string
+
+**MINICONDA VS ANACONDA**
+These are both package managers. Miniconda only includes Python and Jupyter Notebook. Anaconda includes Python, Numpy, Jupyter Notebook, and more. The only difference is that one includes more tools than the other, just like choosing between buying an empty house or one that is fully furnished. The choice exists due to storage size differences since you might not use all the tools which will take up space.
 
 **COMMANDS**
 _To display text._
@@ -197,6 +201,15 @@ e.g. def total(a,b)
 
     total(10,11) =  21
 
+e.g. scores = [90, 80, 60, 70]
+
+    mean = 0
+    for score in scores:
+        mean = mean + score
+    mean / len(scores)
+
+    Result = 75.0
+
 **LOOPS**
 e.g. numbers = [1, 2, 3, 4, 5, 6]
 
@@ -216,3 +229,45 @@ e.g. animals = ['fish', 'cat', 'elephant']
 
     for animal in animals:
         print(animal.upper()) = FISH CAT ELEPHANT
+
+**NUMPY**
+Importing with numpy is importing functions made by other people. These are used to save time and use more efficient functions, usually mathematical formulas. You can only use numpy functions with NumPy arrays (Numpy arrays have the text 'array' in the front).
+
+_Make an array:_
+numbers = np.arange(0, 11, 2)
+
+array([ 0, 2, 4, 6, 8, 10])
+-The two at the end is to signify jumps in digits-
+
+_Sum an array:_
+numbers = array([ 0, 2, 4, 6, 8, 10])
+
+numbers.sum() = 30
+
+_Linspace:_
+numbers = np.linspace(0, 10, 5)
+
+array([ 0., 2.5, 5., 7.5, 10.])
+-Number at the end is how many zeroes in between-
+
+_Logspace:_
+numbers = np.logspace(-3, 3 ,7)
+
+array([1.e-03, 1.e-02, 1.e-01, 1.e+00, 1.e+01, 1.e+02, 1.e+03])
+-Number at the end is the power-
+
+_Random(RNG):_
+np.random.rand(3,2)
+
+array([[0.3077662 , 0.40693044],
+       [0.86609681, 0.15790726],
+       [0.68423774, 0.61636793]])
+-The 3 is the amount of rows, 2 is the amount of columns-
+
+_Controlled Randomness(Rigged RNG):_
+np.random.RandomState(3)
+-3 is interchangeable-
+
+np.random.RandomState(1)
+state.randint(1, 10, 5) = array([6, 9, 6, 1, 1])
+-1 and 10 is the range, 5 is how many numbers will be chosen at random-
