@@ -141,7 +141,6 @@ a.split() = ['Array', 'Content', '1']
 b.split(',') = ['Hello', 'this is my array']
 
 **DICTIONARIES**
-
 a = {'cat': 'kucing', 'dog': 'anjing', 'fish': 'ikan'}
 
 _Accessing a value:_
@@ -175,3 +174,45 @@ _Replace multiple values at once:_
 a.update(dict.fromkeys(['dog', 'fish'], 'kucing'))
 
 a = {'dog': 'kucing', 'fish': 'kucing'}
+
+**CONDITIONALS**
+e.g. score = 50
+
+if 0 <= score < 60:
+    print("index: C")
+elif 60 <= score < 80:
+    print("index: B")
+elif 80 <= score < 100:
+    print("index: A")
+elif score == 100:
+    print("index: S")
+else:
+    print("Fail")
+
+Result = "Index: C"
+
+**FUNCTIONS**
+e.g. def total(a,b)
+        return a + b
+
+    total(10,11) =  21
+
+**LOOPS**
+e.g. numbers = [1, 2, 3, 4, 5, 6]
+
+    for i in numbers:
+        print(i + 1) = 2 3 4 5 6 7
+
+e.g. numbers = [1, 2, 3, 4, 5, 6]
+
+    for i in numbers:
+        i = i**2
+        print(i) = 1 4 9 16 25 36
+
+e.g. animals = ['fish', 'cat', 'elephant']
+
+    for animal in animals:
+        print(animal) = fish cat elephant
+
+    for animal in animals:
+        print(animal.upper()) = FISH CAT ELEPHANT
