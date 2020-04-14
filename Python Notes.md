@@ -282,10 +282,10 @@ _Make a dataframe:_
 example = {"a": [1, 2, 3], "b": [4, 5, 6]}
 pd.DataFrame(example)
 
-	a	b
-0	1	4
-1	2	5
-2	3	6
+Result =    	a	b
+             0	1	4
+             1	2	5
+             2	3	6
 
 _Read from .csv files:_
 pd.read_csv("file_path")
@@ -300,4 +300,27 @@ _Get columns and rows:_
 var_name._column_name.head("row_range_int")
 
 var_name["column_name"].head("row_range_int)
+
+var_name[["col_1", "col_2", "col_3"]].head()
+
+-.head = Takes the data from the top
+ .tail = Takes the data from the bottom-
+
+_Slicing:_
+var_name.loc[row_range, column_range]
+
+e.g. df.loc[10:13, "calories": "fat"] 
+     Results = calories	protein	fat
+            10	120	       1	 2
+            11	110	       6	 2
+            12	120	       1	 3
+            13	110	       3	 2
+
+var_name.iloc[row_range, column_range]
+
+e.g. df.iloc[10:13, 1:6]
+     Results = 	mfr	type	calories	protein	fat
+            10	 Q	 C	      120	      1	     2
+            11	 G	 C	      110	      6	     2
+            12	 G	 C	      120	      1	     3
 
