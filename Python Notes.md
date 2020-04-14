@@ -271,3 +271,33 @@ np.random.RandomState(3)
 np.random.RandomState(1)
 state.randint(1, 10, 5) = array([6, 9, 6, 1, 1])
 -1 and 10 is the range, 5 is how many numbers will be chosen at random-
+
+**PANDAS**
+Python data modelling for data analytics, similar to Microsoft Excel
+
+_Open Pandas:_
+import pandas as pd
+
+_Make a dataframe:_
+example = {"a": [1, 2, 3], "b": [4, 5, 6]}
+pd.DataFrame(example)
+
+	a	b
+0	1	4
+1	2	5
+2	3	6
+
+_Read from .csv files:_
+pd.read_csv("file_path")
+
+_List all columns in .csv:_
+var_name.columns
+
+_List .csv index:_
+var_name.index
+
+_Get columns and rows:_
+var_name._column_name.head("row_range_int")
+
+var_name["column_name"].head("row_range_int)
+
