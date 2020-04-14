@@ -274,6 +274,7 @@ state.randint(1, 10, 5) = array([6, 9, 6, 1, 1])
 
 **PANDAS**
 Python data modelling for data analytics, similar to Microsoft Excel
+There are two data types, numeric and categoric. Numeric is numbers only, anything not a number is assumed to be categoric regardless if there is a number present with it.
 
 _Open Pandas:_
 import pandas as pd
@@ -324,3 +325,25 @@ e.g. df.iloc[10:13, 1:6]
             11	 G	 C	      110	      6	     2
             12	 G	 C	      120	      1	     3
 
+_Correlation:_
+var_name.corr()
+-Checks if the variables are directly/inversely proportional to each other, only for numeric values-
+
+_Describe:_
+var_name.describe()
+-Shows all numeric variables-
+
+_Counting values:_
+var_name.col_name.value_counts()
+
+_Show only unique values:_
+var_name.col_name.unique()
+
+_Show variable info:_
+var_name.info()
+
+_Check empty columns:_
+var_name.isa().sum()
+
+_Count values:_
+var_name.col_name.value_counts()

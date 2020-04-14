@@ -16,3 +16,4 @@ _Unsupervised Learning:_
 This uses input data to find hidden patterns or groupings in data. It looks at the data to make clusters of data and find which clusters are relevent to its cause.
 
 _Reinforcement Learning:_
+A learning method that trains algorithms using a reward and punishment system, where the algorithm interacts with its environment to find out what gets it rewarded and what gets it punished.
