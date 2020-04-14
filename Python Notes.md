@@ -347,3 +347,31 @@ var_name.isa().sum()
 
 _Count values:_
 var_name.col_name.value_counts()
+
+_Saving to .csv:_
+var_name.to_csv("folder_path", index_label="app_name")
+
+_Filtering by value:_
+var_name[var_name._col_name > "x"]
+
+e.g. df[df.calories > 100]
+e.g. df[(df.calories < 150) & (df.protein > 2)]
+e.g. df[df.mfr == "K"]
+
+_Mapping values:_
+e.g. mapper = {
+        "C": 0,
+        "H": 1
+     }
+
+     df.type = df.type.map(mapper)
+     df.head()
+
+_Replace specific string:_
+e.g. def remove_symbol(x):
+        return x.replace("FDA_", "")
+
+     df.vitamins = df.vitamins.apply(remove_symbol)
+     df.head()
+
+Results = FDA_25 --> 25
