@@ -233,6 +233,8 @@ e.g. animals = ['fish', 'cat', 'elephant']
 **NUMPY**
 Importing with numpy is importing functions made by other people. These are used to save time and use more efficient functions, usually mathematical formulas. You can only use numpy functions with NumPy arrays (Numpy arrays have the text 'array' in the front).
 
+import numpy as np
+
 _Make an array:_
 numbers = np.arange(0, 11, 2)
 
@@ -275,6 +277,8 @@ state.randint(1, 10, 5) = array([6, 9, 6, 1, 1])
 **PANDAS**
 Python data modelling for data analytics, similar to Microsoft Excel
 There are two data types, numeric and categoric. Numeric is numbers only, anything not a number is assumed to be categoric regardless if there is a number present with it.
+
+import pandas as pd
 
 _Open Pandas:_
 import pandas as pd
