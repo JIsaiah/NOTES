@@ -28,3 +28,59 @@ There are three types of distance movements: (VSCode no pics so go google)
 _Euclidean Distance_
 _Manhattan Distance_
 _Chebyshev Distance_
+
+**PYTHON DATA SCIENCE WORKFLOW**
+e.g. # Import packages
+        import numpy as np
+        import pandas as pd
+        from sklearn.model_selection import train_test_split, GridSearchCV
+        from sklearn.pipeline import Pipeline
+        from sklearn.compose import ColumnTransformer
+        from sklearn.neighbors import KNeighborsClassifier
+        from sklearn.impute import SimpleImputer
+        from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
+
+     # Import data and drop columns
+        df = pd.read_csv("data/titanic.csv", index_col="PassengerId")
+        df.drop(columns=["Name", "Ticket", "Age", "Cabin"], inplace=True)
+
+     # Dataset Splitting
+        X = df.drop(columns='Survived')
+        y = df.Survived
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
+        X_train.shape, X_test.shape, y_train.shape, y_test.shape
+
+     # Preprocessor
+        numerical_pipeline = Pipeline([
+            ("imputer", SimpleImputer(strategy='mean')),
+            ("scaler", MinMaxScaler())
+        ])
+
+        categorical_pipeline = Pipeline([
+            ("imputer", SimpleImputer(strategy='most_frequent')),
+            ("onehot", OneHotEncoder())
+        ])
+
+        preprocessor = ColumnTransformer([
+            ('numeric', numerical_pipeline, ["SibSp", "Parch", "Fare"]),
+            ('categoric', categorical_pipeline, ["Pclass", "Sex", "Embarked"]),
+        ])
+
+     # Pipeline
+        pipeline = Pipeline([
+            ("prep", preprocessor),
+            ("algo", KNeighborsClassifier())
+        ])
+
+     # Hyper Parameter Tuning
+        parameter = {
+            "algo__n_neighbors": np.arange(1, 51, 2),
+            "algo__weights": ['uniform', 'distance'],
+            "algo__p": [1, 2]
+        }
+        model = GridSearchCV(pipeline, param_grid=parameter, cv=3, n_jobs=-1, verbose=1)
+        model.fit(X_train, y_train)
+
+     # Evaluation
+        print(model.best_params_)
+        print(model.score(X_train, y_train), model.best_score_, model.score(X_test, y_test))
